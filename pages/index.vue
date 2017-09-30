@@ -31,16 +31,12 @@ export default {
     //   })
     // };
 
-    let x = await app.$content('/')
-      .query({ exclude: ['attributes', 'body'] })
-      .getAll();
-
-    console.log('x', x);
+    // let x = await app.$content('/')
+    //   .query({ exclude: ['attributes', 'body'] })
+    //   .getAll();
 
     return {
-      posts: await app.$content('/')
-        .query({ exclude: ['attributes', 'body'] })
-        .getAll()
+      posts: []
     };
   },
   head () {

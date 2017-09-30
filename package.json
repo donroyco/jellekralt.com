@@ -4,6 +4,9 @@
   "description": "JelleKralt.com",
   "author": "Jelle Kralt <jelle@jellekralt.nl>",
   "private": true,
+  "engines": {
+    "node": "8.5.0"
+  },
   "scripts": {
     "dev": "backpack dev",
     "build": "nuxt build && backpack build",

@@ -9,6 +9,7 @@ const host = process.env.HOST || '127.0.0.1';
 const port = process.env.PORT || 3000;
 
 const mainDomain = 'jellekralt.com';
+const dokkuDomain = 'jellekralt-com.kra.lt';
 
 app.set('port', port);
 
@@ -31,6 +32,7 @@ if (config.dev) {
 if (process.env.NODE_ENV === 'production') {
   app.use(redirect);
 }
+app.use(dokkuHeaders);
 
 // Give nuxt middleware to express
 app.use(nuxt.render);
@@ -43,11 +45,19 @@ function redirect (req, res, next) {
   const host = req.hostname;
   const url = req.url;
 
-  if (host !== mainDomain) {
+  if (host !== mainDomain && host !== dokkuDomain) {
     let redirectTo = `https://${mainDomain}${url}`;
 
     res.redirect(redirectTo);
   } else {
     next();
+  }
+}
+
+function dokkuHeaders (req, res, next) {
+  const host = req.hostname;
+
+  if (host === dokkuDomain) {
+    res.setHeader('X-Robots-Tag', ['googlebot: nofollow', 'otherbot: noindex, nofollow']);
   }
 }

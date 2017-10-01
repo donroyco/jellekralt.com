@@ -1,3 +1,4 @@
+import querystring from 'querystring';
 import express from 'express';
 import { Nuxt, Builder } from 'nuxt';
 
@@ -6,6 +7,8 @@ import api from './api';
 const app = express();
 const host = process.env.HOST || '127.0.0.1';
 const port = process.env.PORT || 3000;
+
+const mainDomain = 'jellekralt.com';
 
 app.set('port', port);
 
@@ -25,9 +28,26 @@ if (config.dev) {
   builder.build();
 }
 
+if (process.env.NODE_ENV === 'production') {
+  app.use(redirect);
+}
+
 // Give nuxt middleware to express
 app.use(nuxt.render);
 
 // Listen the server
 app.listen(port, host);
 console.log('Server listening on ' + host + ':' + port); // eslint-disable-line no-console
+
+function redirect (req, res, next) {
+  const host = req.hostname;
+  const url = req.url;
+
+  if (host !== mainDomain) {
+    let redirectTo = `https://${mainDomain}${url}`;
+
+    res.redirect(redirectTo);
+  } else {
+    next();
+  }
+}

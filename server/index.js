@@ -60,4 +60,6 @@ function dokkuHeaders (req, res, next) {
   if (host === dokkuDomain) {
     res.setHeader('X-Robots-Tag', ['googlebot: nofollow', 'otherbot: noindex, nofollow']);
   }
+
+  next();
 }

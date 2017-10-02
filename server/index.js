@@ -1,5 +1,5 @@
-import querystring from 'querystring';
 import express from 'express';
+import helmet from 'helmet';
 import { Nuxt, Builder } from 'nuxt';
 
 import api from './api';
@@ -10,6 +10,8 @@ const port = process.env.PORT || 3000;
 
 const mainDomain = 'jellekralt.com';
 const dokkuDomain = 'jellekralt-com.kra.lt';
+
+app.use(helmet());
 
 app.set('port', port);
 

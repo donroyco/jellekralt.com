@@ -7,6 +7,8 @@
 </template>
 
 <script>
+import 'highlight.js/styles/vs.css';
+import hljs from 'highlight.js';
 import PageFooter from '~/components/Footer.vue';
 import PageHeader from '~/components/Header.vue';
 
@@ -22,6 +24,9 @@ export default {
         { title: 'Blog', href: '/blog' }
       */]
     };
+  },
+  mounted: () => {
+    hljs.initHighlightingOnLoad();
   }
 };
 </script>

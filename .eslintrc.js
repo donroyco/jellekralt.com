@@ -14,5 +14,7 @@ module.exports = {
   rules: {
     semi: ['error', 'always']
   },
-  globals: {}
+  globals: {
+    hljs: 'hljs'
+  }
 }

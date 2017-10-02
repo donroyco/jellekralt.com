@@ -15,20 +15,6 @@ module.exports = {
     ]
   },
   /*
-  ** Content
-  */
-  nuxtent: {
-    content: {
-      page: '/',
-      permalink: ':year/:month/:day/:slug',
-      isPost: false,
-      generate: [
-        'get',
-        'getAll'
-      ]
-    }
-  },
-  /*
   ** Global CSS
   */
   css: ['~/assets/css/main.scss'],
@@ -36,8 +22,7 @@ module.exports = {
   ** Modules
   */
   modules: [
-    '@nuxtjs/font-awesome',
-    'nuxtent'
+    '@nuxtjs/font-awesome'
   ],
   /*
   ** Plugins

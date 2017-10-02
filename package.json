@@ -21,8 +21,11 @@
     "cross-env": "^5.0.1",
     "date-fns": "^1.28.5",
     "express": "^4.15.3",
+    "helmet": "^3.8.2",
+    "highlight.js": "^9.12.0",
+    "marked": "^0.3.6",
     "nuxt": "^1.0.0-rc3",
-    "nuxtent": "^1.0.0",
+    "slugify": "^1.2.1",
     "source-map-support": "^0.4.15"
   },
   "devDependencies": {

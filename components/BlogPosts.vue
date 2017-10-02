@@ -4,7 +4,7 @@
     <ul class="post-list">
       <li class="post-item" v-for="post in posts">
         <div class="meta">
-          <time datetime="2017-01-01T00:01:00" itemprop="datePublished" v-html="post.date"></time>
+          <time datetime="2017-01-01T00:01:00" itemprop="datePublished" v-html="$options.filters.dateSuperscript(post.dateFormatted)"></time>
         </div>
         <span><nuxt-link :to="{ path: post.link }">{{ post.title }}</nuxt-link></span>
       </li>

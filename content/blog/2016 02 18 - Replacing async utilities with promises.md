@@ -108,4 +108,8 @@ For the moment, this can be a cool and simple solution, but in the future there 
 
 If you feel there are better ways of doing this, or have some idea's / feedback on this topic, feel free to leave a comment!
 
-> PS: I'm not advocating the usage this solution as the single way of structuring your async functions, (in fact, i'd highly advise against it because of the issues in Node.js and lack of support in IE) it is however merely an example of a simple and dependency-less way of doing stuff async, which can be useful in some cases.
+ 
+------
+
+ 
+**PS**: *I'm not advocating the usage this solution as the single way of structuring your async functions, (in fact, i'd highly advise against it because of the issues in Node.js and lack of support in IE) it is however merely an example of a simple and dependency-less way of doing stuff async, which can be useful in some cases.*

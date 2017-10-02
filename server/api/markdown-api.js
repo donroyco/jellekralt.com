@@ -25,7 +25,7 @@ export default function markdownApi (config) {
           title: title,
           slug: slugify(title, { lower: true })
         };
-      }));
+      }).reverse());
     });
   });
 
@@ -60,7 +60,7 @@ export default function markdownApi (config) {
 
         res.json({
           date: `${year}-${month}-${day}T00:00:00.000Z`,
-          title: 'Foo',
+          title: foundFiles[0].split('-')[1].replace('.md', ''),
           content: marked(data),
           slug: slug
         });

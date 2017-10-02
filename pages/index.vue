@@ -22,8 +22,6 @@ export default {
   async asyncData ({ app }) {
     let { data } = await axios.get('/api/blog/');
 
-    console.log('data', data);
-
     return {
       posts: data.map(post => {
         post.dateFormatted = format(parse(post.date), 'MMM Do YYYY');

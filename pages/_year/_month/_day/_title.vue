@@ -6,20 +6,18 @@
       /* eslint-disable */
       /**
       *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
-      *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
-      */
+      *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+      /*
       var disqus_config = function () {
-          this.page.url = 'https://jellekralt.com' + window.location.pathname;
-          console.log( this.page.url );
-          /*this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable */
+      this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+      this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
       };
-      (function() {  // REQUIRED CONFIGURATION VARIABLE: EDIT THE SHORTNAME BELOW
-          var d = document, s = d.createElement('script');
-          
-          s.src = 'https://jellekralt.disqus.com/embed.js';  // IMPORTANT: Replace EXAMPLE with your forum shortname!
-          
-          s.setAttribute('data-timestamp', +new Date());
-          (d.head || d.body).appendChild(s);
+      */
+      (function() { // DON'T EDIT BELOW THIS LINE
+      var d = document, s = d.createElement('script');
+      s.src = 'https://jellekralt.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
       })();
       /* eslint-enable */
     </script>

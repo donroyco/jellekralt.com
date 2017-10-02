@@ -25,7 +25,7 @@ export default {
     return {
       posts: data.map(post => {
         post.dateFormatted = format(parse(post.date), 'MMM Do YYYY');
-        post.link = format(parse(post.date), '/YYYY/MM/DD/') + post.slug;
+        post.link = format(parse(post.date), '/YYYY/MM/DD/') + post.slug + '/';
 
         return post;
       })

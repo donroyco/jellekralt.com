@@ -33,7 +33,6 @@ if (config.dev) {
   const builder = new Builder(nuxt);
   builder.build();
 }
-app.use(redirect);
 
 if (process.env.NODE_ENV === 'production') {
   app.use(redirect);
@@ -46,13 +45,13 @@ app.use(nuxt.render);
 
 // Listen the server
 app.listen(port, host);
+
 console.log('Server listening on ' + host + ':' + port); // eslint-disable-line no-console
 
 function redirect (req, res, next) {
   const host = req.hostname;
   const urlPath = req.url;
   const fullUrl = url.format({
-    protocol: req.protocol,
     host: req.get('host'),
     pathname: req.path
   });

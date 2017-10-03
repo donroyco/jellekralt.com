@@ -1,8 +1,11 @@
+import url from 'url';
 import express from 'express';
 import helmet from 'helmet';
 import { Nuxt, Builder } from 'nuxt';
 
 import api from './api';
+
+import redirects from '../redirects.json';
 
 const app = express();
 const host = process.env.HOST || '127.0.0.1';
@@ -30,10 +33,12 @@ if (config.dev) {
   const builder = new Builder(nuxt);
   builder.build();
 }
+app.use(redirect);
 
 if (process.env.NODE_ENV === 'production') {
   app.use(redirect);
 }
+
 app.use(dokkuHeaders);
 
 // Give nuxt middleware to express
@@ -45,11 +50,18 @@ console.log('Server listening on ' + host + ':' + port); // eslint-disable-line 
 
 function redirect (req, res, next) {
   const host = req.hostname;
-  const url = req.url;
+  const urlPath = req.url;
+  const fullUrl = url.format({
+    protocol: req.protocol,
+    host: req.get('host'),
+    pathname: req.path
+  });
+  const foundRedirects = redirects.filter(redirect => redirect.from === fullUrl);
 
-  if (host !== mainDomain && host !== dokkuDomain) {
-    let redirectTo = `https://${mainDomain}${url}`;
-
+  if (foundRedirects.length > 0) {
+    res.redirect(foundRedirects[0].to);
+  } else if (host !== mainDomain && host !== dokkuDomain) {
+    let redirectTo = `https://${mainDomain}${urlPath}`;
     res.redirect(redirectTo);
   } else {
     next();

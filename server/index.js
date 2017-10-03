@@ -58,6 +58,8 @@ function redirect (req, res, next) {
   });
   const foundRedirects = redirects.filter(redirect => redirect.from === fullUrl);
 
+  console.log('fullUrl', fullUrl);
+
   if (foundRedirects.length > 0) {
     res.redirect(foundRedirects[0].to);
   } else if (host !== mainDomain && host !== dokkuDomain) {

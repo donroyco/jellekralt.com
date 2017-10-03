@@ -60,10 +60,10 @@ function redirect (req, res, next) {
   console.log('fullUrl', fullUrl);
 
   if (foundRedirects.length > 0) {
-    res.redirect(foundRedirects[0].to);
+    res.redirect(301, foundRedirects[0].to);
   } else if (host !== mainDomain && host !== dokkuDomain) {
     let redirectTo = `https://${mainDomain}${urlPath}`;
-    res.redirect(redirectTo);
+    res.redirect(301, redirectTo);
   } else {
     next();
   }

@@ -1,6 +1,7 @@
 import fs from 'fs';
 import { Router } from 'express';
 import marked from 'marked';
+import fm from 'front-matter';
 import slugify from 'slugify';
 
 export default function markdownApi (config) {
@@ -57,12 +58,17 @@ export default function markdownApi (config) {
         if (err) {
           return res.status(404).send('Blogpost not found');
         }
+        
+        let mdData = fm(data);
+        let content = marked(mdData.body);
+        let meta = mdData.attributes;
 
         res.json({
           date: `${year}-${month}-${day}T00:00:00.000Z`,
           title: foundFiles[0].split('-')[1].replace('.md', ''),
-          content: marked(data),
-          slug: slug
+          meta,
+          content,
+          slug
         });
       });
     });

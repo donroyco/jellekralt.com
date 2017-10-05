@@ -1,4 +1,7 @@
-# Replacing async utilities with native promises
+---
+title: Replacing async utilities with native promises
+author: Jelle Kralt
+---
 
 As most people by now know, doing asynchronous stuff in JavaScript by using nested callbacks is not that great. To tackle this problem a number of amazing utility modules (like [async](https://github.com/caolan/async) and [co](https://github.com/tj/co)) have been created, which can be used to bring structure to your app. 
 

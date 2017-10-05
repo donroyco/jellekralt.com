@@ -1,5 +1,16 @@
 <template>
   <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+    <header>
+      <h1 class="posttitle" itemprop="name headline" v-if="post.meta.title">{{ post.meta.title }}</h1>
+      <div class="meta">
+        <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person" v-if="post.meta.author">
+          <span itemprop="name">{{ post.meta.author }} </span>
+        </span>
+        <div class="postdate">
+          <time datetime="post.date" itemprop="datePublished">{{ post.dateFormatted }}</time>
+        </div>
+      </div>
+    </header>
     <div class="content" v-html="post.content"></div>
     <div id="disqus_thread"></div>
     <script>
@@ -25,7 +36,7 @@
 </template>
 
 <script>
-import { isValid, parse } from 'date-fns';
+import { isValid, parse, format } from 'date-fns';
 import axios from '~/plugins/axios';
 
 export default {
@@ -38,6 +49,8 @@ export default {
   async asyncData ({ params, error }) {
     try {
       let { data } = await axios.get(`/api/blog/${params.year}/${params.month}/${params.day}/${params.title}`);
+
+      data.dateFormatted = format(parse(data.date), 'MMM Do YYYY');
 
       return {
         post: data

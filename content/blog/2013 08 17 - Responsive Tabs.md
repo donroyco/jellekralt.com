@@ -1,4 +1,7 @@
-# Responsive tabs - jQuery Plugin
+---
+title: Responsive tabs - jQuery Plugin
+author: Jelle Kralt
+---
 
 Tabs widgets can be a very useful web element for grouping data on a web page. They are used on many websites and because of this there are a lot of javascript plugins that provide tab widgets (for instance, [jQuery UI Tabs](http://jqueryui.com/tabs/)). Nowadays though, lots of new websites are designed responsively, and that causes a problem when you want to use tabs. Tabs don't look particularly good on a mobile view, the tabs items don't have enough room horizontally. Accordion widgets do look good on a mobile view though, the size of the accordion increases vertically. The best solution to the responsive problem are tabs that convert to an accordion. There are some solutions like this available on the internet but for some reason none of them were right for the projects i needed them on. I needed a plugin that was a bit more advanced and offered (auto) collapsed panels and more. After searching for a while i decided to create my own jQuery plugin that provides the solution i needed.
 

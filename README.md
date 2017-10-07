@@ -16,3 +16,11 @@ $ npm start
 ```
 
 For detailed explanation on how things work, checkout the [Nuxt.js docs](https://github.com/nuxt/nuxt.js).
+
+## TODO
+* [] Convert / get rid of old sass stylesheets
+* [] Refactor markdown api to npm module
+* [] Move blogpost to seperate component
+* [] Add more favicons for all platforms
+* [] Add social media meta tags
+* [] Cache with serviceworkers

@@ -1,6 +1,7 @@
 ---
 title: Dynamically load a template in an Angular directive
 author: Jelle Kralt
+tags: angularjs,javascript,template,directive
 ---
 
 I've been having an issue with a dynamic templateUrl in an Angular directive. This might be an edge case, but for the people who are running into the same issue, I might have a solution.

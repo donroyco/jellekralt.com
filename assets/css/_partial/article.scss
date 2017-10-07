@@ -22,6 +22,9 @@ article {
     }
     .postdate {
       display: inline;
+      &:before {
+        content: "| ";
+      }  
     }
   }
   .content {
@@ -136,7 +139,7 @@ article {
   .article-tag {
     display: inline;
     &:before {
-      content: "|";
+      content: "| ";
     }
   }
 }

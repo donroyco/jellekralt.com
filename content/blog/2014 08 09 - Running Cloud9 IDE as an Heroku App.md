@@ -1,6 +1,7 @@
 ---
 title: Running Cloud9 IDE as an Heroku App
 author: Jelle Kralt
+tags: cloud9,ide,heroku
 ---
 
 If you're a (web) developer, chances are, you've heard about [Cloud9](https://c9.io/). If not, you should definitely check it out! It's basically an IDE running in the cloud. On the [Cloud9](https://c9.io/) website, you can sign up for an account which gives you access to the IDE with a full Ubuntu workspace in the cloud. With a free account you can have one free 'private' workspace! If you're like me, you've probably already wondered how it works and maybe even thought of a project you could use the excellent IDE for (I know i have!). In either of those cases, you are in luck! There is an [OSS version of the IDE](https://github.com/ajaxorg/cloud9) that you can check out, fork, and run on your own machine. In my case, I wanted to use the IDE as a live editing tool in a project I'm currently working on. I'm using Heroku to host my app, so logically I tried to run Cloud9 on Heroku. Fortunately, Cloud9 runs on Node.js, so that should be smooth sailing on Heroku, right? Well, it almost is, if you follow the steps below, you should have your own Cloud9 app running on Heroku in no-time!

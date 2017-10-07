@@ -1,77 +1,67 @@
+import { promisify } from 'util';
 import fs from 'fs';
+import { Observable } from 'rxjs';
 import { Router } from 'express';
+import NodeCache from 'node-cache';
 import marked from 'marked';
 import fm from 'front-matter';
 import slugify from 'slugify';
 
+// const cache = NodeCache();
+const readDir = promisify(fs.readdir);
+const readFile = promisify(fs.readFile);
+
+const cache = new NodeCache({});
+
 export default function markdownApi (config) {
   let router = Router();
+  let posts = [];
 
   if (!config.path) {
     throw Error('Markdown API requires path');
   }
 
+  getPosts(config.path)
+    .subscribe(
+      (post) => posts.push(post),
+      () => {},
+      () => {
+        posts.sort((a, b) => {
+          return new Date(b.date) - new Date(a.date);
+        });
+
+        cache.set('posts', posts);
+      });
+
   router.get('/', (req, res, next) => {
-    fs.readdir(config.path, (err, files) => {
-      if (err) {
-        return res.status(404).send('Blogposts not found');
+    let tag = req.query.tag;
+    let posts = cache.get('posts');
+
+    if (tag) {
+      posts = posts.filter(post => {
+        return post.meta.tags && post.meta.tags.indexOf(tag) > -1
+      });
+
+      if (posts.length === 0) {
+        return res.status(404).send('Tag not found');
       }
+    }
 
-      res.json(files.map((file) => {
-        let title = file.split('-')[1].replace('.md', '');
-        let [year, month, day] = file.split('-')[0].split(' ');
-
-        return {
-          date: `${year}-${month}-${day}T00:00:00.000Z`,
-          title: title,
-          slug: slugify(title, { lower: true })
-        };
-      }).reverse());
-    });
+    res.json(posts);
   });
 
   router.get('/:year/:month/:day/:slug', (req, res, next) => {
+    let posts = cache.get('posts'); 
     let { year, month, day, slug } = req.params;
+    let date = `${year}-${month}-${day}T00:00:00.000Z`;
 
-    fs.readdir(config.path, (err, files) => {
-      if (err) {
-        return res.status(404).send('Blogposts not found');
-      }
+    let foundPosts = posts.filter(post => slug === post.slug && date === post.date);
 
-      let foundFiles = files.filter((file) => {
-        let fileTitle = file.split('-')[1].replace('.md', '');
-        let [fileYear, fileMonth, fileDay] = file.split('-')[0].split(' ');
+    if (foundPosts.length === 0) {
+      return res.status(404).send('Blogpost not found');
+    }
 
-        let matchTitle = slug === slugify(fileTitle, { lower: true });
-        let matchYear = year === fileYear;
-        let matchMonth = month === fileMonth;
-        let matchDay = day === fileDay;
-
-        return matchTitle && matchYear && matchMonth && matchDay;
-      });
-
-      if (foundFiles.length === 0) {
-        return res.status(404).send('Blogpost not found');
-      }
-
-      fs.readFile(config.path + '/' + foundFiles[0], 'utf8', (err, data) => {
-        if (err) {
-          return res.status(404).send('Blogpost not found');
-        }
-        
-        let mdData = fm(data);
-        let content = marked(mdData.body);
-        let meta = mdData.attributes;
-
-        res.json({
-          date: `${year}-${month}-${day}T00:00:00.000Z`,
-          title: foundFiles[0].split('-')[1].replace('.md', ''),
-          meta,
-          content,
-          slug
-        });
-      });
-    });
+    res.json(foundPosts[0]);
   });
 
   return router;
@@ -86,3 +76,34 @@ export default function markdownApi (config) {
 
 //   });
 // }
+
+function getPosts (path) {
+  return Observable
+    .fromPromise(readDir(path))
+    .flatMap(Observable.from)
+    .flatMap(file => Observable.fromPromise(readFile(`${path}/${file}`, 'utf8')), (fileName, data) => {
+      let parsedData = fm(data);
+      let content = marked(parsedData.body);
+      let meta = parsedData.attributes;
+
+      if (meta.tags) {
+        meta.tags = meta.tags.split(',');
+      }
+
+      return {
+        fileName,
+        content,
+        meta
+      };
+    })
+    .map(file => {
+      let title = file.fileName.split('-')[1].replace('.md', '');
+      let [year, month, day] = file.fileName.split('-')[0].split(' ');
+
+      return Object.assign(file, {
+        date: `${year}-${month}-${day}T00:00:00.000Z`,
+        slug: slugify(title, { lower: true }),
+        title
+      });
+    });
+}

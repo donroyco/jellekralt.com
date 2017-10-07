@@ -1,6 +1,7 @@
 ---
 title: jQuery is not the holy grail
 author: Jelle Kralt
+tags: jquery,javascript
 ---
 
 A while back I was browsing through the source of a number of jQuery plugins and i realised that too many developers lean too much on jQuery. This really is a bad thing that will come and bite you in the ass on the long run. At the moment of writing jQuery is the undisputed king of the JavaScript libraries. This position has brought an enormous (and ever growing) community of people using and writing for jQuery. Loads of developers thankfully use this community and the stuff it produces to find solutions to their problems. But like lot of things in life, people sometimes overdo things, with all the associated negative consequences.

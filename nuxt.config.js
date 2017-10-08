@@ -22,7 +22,8 @@ module.exports = {
   ** Modules
   */
   modules: [
-    '@nuxtjs/font-awesome'
+    '@nuxtjs/font-awesome',
+    '@nuxtjs/sitemap'
   ],
   /*
   ** Plugins

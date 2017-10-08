@@ -26,6 +26,7 @@
 </template>
 
 <script>
+  import 'highlight.js/styles/vs.css';
   import Disqus from '~/components/Disqus.vue';
 
   export default {

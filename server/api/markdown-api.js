@@ -13,6 +13,14 @@ const readFile = promisify(fs.readFile);
 
 const cache = new NodeCache({});
 
+marked.setOptions({
+  highlight: function (code, language) {
+    let codeHtml = require('highlight.js').highlightAuto(code).value;
+
+    return `<pre><code class="hljs ${language}">${codeHtml}</code></pre>`;
+  }
+});
+
 export default function markdownApi (config) {
   let router = Router();
   let posts = [];

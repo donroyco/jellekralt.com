@@ -1,6 +1,6 @@
 <template>
   <section id="writing">
-    <span class="h1"><a href="/blogs">Blogposts</a></span>
+    <h2 class="h1"><a href="/blog">Blogposts</a></h2>
     <ul class="post-list">
       <li class="post-item" v-for="post in posts">
         <div class="meta">

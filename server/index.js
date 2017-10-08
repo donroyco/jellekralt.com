@@ -36,6 +36,7 @@ if (config.dev) {
 
 if (process.env.NODE_ENV === 'production') {
   app.use(redirect);
+  app.get('/robots.txt', robots);
 }
 
 app.use(dokkuHeaders);
@@ -77,4 +78,11 @@ function dokkuHeaders (req, res, next) {
   }
 
   next();
+}
+
+function robots (req, res, next) {
+  res.status(200).send(`
+User-agent: *
+Disallow:
+  `);
 }

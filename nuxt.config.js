@@ -7,7 +7,7 @@ module.exports = {
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1, maximum-scale=1' },
-      { hid: 'description', name: 'description', content: 'Nuxt.js project' },
+      { hid: 'description', name: 'description', content: 'Hi, I\'m Jelle Kralt. Front End Engineer at CODEZILLA. I ❤️ JavaScript' },
       { 'http-equiv': 'X-UA-Compatible', content: 'IE=edge' }
     ],
     link: [
@@ -28,7 +28,10 @@ module.exports = {
   /*
   ** Plugins
   */
-  plugins: ['~plugins/filters.js'],
+  plugins: [
+    '~plugins/filters.js',
+    { src: '~plugins/ga.js', ssr: false }
+  ],
   /*
   ** Add axios globally
   */

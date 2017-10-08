@@ -19,10 +19,11 @@ export default {
   },
   data: () => {
     return {
-      navigation: [/*
+      navigation: [
         { title: 'Home', href: '/' },
-        { title: 'Blog', href: '/blog' }
-      */]
+        { title: 'Blog', href: '/blog' },
+        { title: 'Projects', href: 'https://github.com/jellekralt' }
+      ]
     };
   },
   mounted: () => {

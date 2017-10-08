@@ -11,6 +11,5 @@
       and 
       <span><a class="icon" target="_blank" href="https://keybase.io/jellekralt/" title="Keybase"><i class="fa fa-key"></i></a></span>
     </p>
-    <p>This page is currently under construction...</p>
   </section>
 </template>

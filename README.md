@@ -19,8 +19,9 @@ For detailed explanation on how things work, checkout the [Nuxt.js docs](https:/
 
 ## TODO
 * [X] Convert / get rid of old sass stylesheets
+* [X] Fix Highlight.js on first load
 * [ ] Refactor markdown api to npm module
-* [ ] Move blogpost to seperate component
+* [X] Move blogpost to seperate component
 * [ ] Add more favicons for all platforms
 * [ ] Add social media meta tags
 * [ ] Cache with serviceworkers

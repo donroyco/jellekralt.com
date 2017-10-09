@@ -45,6 +45,10 @@ export default function markdownApi (config) {
     let tag = req.query.tag;
     let posts = cache.get('posts');
 
+    if (!config.showConcepts) {
+      posts = posts.filter(post => !post.meta.concept);
+    }
+
     if (tag) {
       posts = posts.filter(post => {
         return post.meta.tags && post.meta.tags.indexOf(tag) > -1

@@ -9,11 +9,11 @@
       </div>
     </a>
     <div id="nav">
-      <ul>
-        <li class="icon">
+      <ul :class="{ 'open': menuIsOpen }">
+        <li class="icon" @click="menuIsOpen = !menuIsOpen">
           <a href="#"><i class="fa fa-bars fa-2x"></i></a>
         </li>        
-        <li v-for="link in navigation"><a :href="link.href">{{ link.title }}</a></li>
+        <li v-for="link in navigation" v-bind:key="link.href"><a :href="link.href">{{ link.title }}</a></li>
       </ul>
     </div>
   </header>
@@ -22,6 +22,9 @@
 
 <script>
   export default {
-    props: ['navigation']
+    props: ['navigation'],
+    data: () => ({
+      menuIsOpen: false
+    })
   };
 </script>

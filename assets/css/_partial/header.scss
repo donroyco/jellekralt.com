@@ -98,6 +98,13 @@ header:hover {
         position: absolute;
         top: 55px;
         right: 1rem;
+
+        button {
+          background: none;
+          border: none;
+          color: $color-text;
+          cursor: pointer;
+        }
       }
     }
     ul.open {

@@ -11,7 +11,7 @@
     <div id="nav">
       <ul :class="{ 'open': menuIsOpen }">
         <li class="icon" @click="menuIsOpen = !menuIsOpen">
-          <a href="#"><i class="fa fa-bars fa-2x"></i></a>
+          <button title="Menu"><i class="fa fa-bars fa-2x"></i></button>
         </li>        
         <li v-for="link in navigation" v-bind:key="link.href"><a :href="link.href">{{ link.title }}</a></li>
       </ul>

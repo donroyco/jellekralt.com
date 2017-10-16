@@ -6,7 +6,6 @@ concept: true
 Say you have this piece of code
 
 ```javascript
-
 let blogPosts = [
   { id: 1, title: 'Foo', content: '....' },
   { id: 2, title: 'Bar', content: '....' },
@@ -20,7 +19,6 @@ blogPosts.forEach(function(post) {
     currentPost = post;
   }
 });
-
 ```
 
 In this example, it's still pretty clear what happens. All the blogposts are looped, and when the current post is found, it is stored in a variable outside the loop. 

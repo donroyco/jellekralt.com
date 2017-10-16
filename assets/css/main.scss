@@ -126,67 +126,10 @@ body {
   }
 }
 
-// @import "_extend"
-@import "_partial/header";
-// @import "_partial/post/actions_desktop"
-// @import "_partial/post/actions_mobile"
 @import "_partial/index";
-@import "_partial/article";
-// @import "_partial/archive"
-// @import "_partial/comments"
+@import "_partial/header";
 @import "_partial/footer";
 // @import "_partial/pagination"
 
-// // Code
-// @import "_highlight/" + highlight
-// pre
-//   font-family: $font-family-mono
-//   font-size: 13px
-//   padding: 10px 15px
-//   padding-bottom: 0
-//   line-height: 22px
-//   -webkit-border-radius: 4px
-//   border-radius: 4px
-//   border: 1px dotted #666
-//   overflow-x: auto
-// code
-//   -webkit-border-radius: 2px
-//   border-radius: 2px
-//   border: 1px dotted #666
-//   padding: 0 5px
-// pre code
-//   border: none
-//   display: block
-//   padding: 0
-
-// .highlight
-//   font-family: $font-family-mono;
-//   background: lighten($color-background, 2%)
-//   // color: $color-light
-//   -webkit-border-radius: 4px
-//   border-radius: 4px
-//   padding: 10px 15px
-//   overflow-x: auto
-//   margin: 1rem 0 1rem 0
-//   figcaption
-//     zoom: 1
-//     margin: -5px 0 5px
-//     font-size: 0.9em
-//     color: #999
-//     a
-//       float: right
-//     &:before,
-//       content: ""
-//       display: table
-//     &:after
-//       clear: both
-//   pre
-//     padding: 0
-//     border: none
-//     background: none
-//   table
-//     width: auto
-//   td.gutter
-//     text-align: right
-//   .line
-//   	height: 22px
+@import "components/about";
+@import "components/article";

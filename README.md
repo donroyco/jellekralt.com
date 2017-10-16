@@ -26,3 +26,7 @@ For detailed explanation on how things work, checkout the [Nuxt.js docs](https:/
 * [ ] Add social media meta tags
 * [ ] Cache with serviceworkers
 * [ ] Add sitemap.xml
+* [ ] Refactor Entire SCSS structure to BEM
+
+## Design
+Based on the excellent [Cactus Dark](https://github.com/probberechts/cactus-dark) theme for Hexo

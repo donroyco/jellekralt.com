@@ -43,6 +43,7 @@ export default function markdownApi (config) {
 
   router.get('/', (req, res, next) => {
     let tag = req.query.tag;
+    let limit = parseInt(req.query.limit);
     let posts = cache.get('posts');
 
     if (!config.showConcepts) {
@@ -57,6 +58,10 @@ export default function markdownApi (config) {
       if (posts.length === 0) {
         return res.status(404).send('Tag not found');
       }
+    }
+
+    if (limit) {
+      posts = posts.slice(0, limit);
     }
 
     res.json(posts);
@@ -78,16 +83,6 @@ export default function markdownApi (config) {
 
   return router;
 }
-
-// function readFiles (path) {
-//   return getFilenames.then(files => Promise.all(readFile()))
-// }
-
-// function getFilenames () {
-//   return new Promise((resolve, reject) {
-
-//   });
-// }
 
 function getPosts (path) {
   return Observable

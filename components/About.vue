@@ -1,7 +1,8 @@
 <template>
   <section class="about">
     <p>
-      Hi, I'm Jelle Kralt. Front End Engineer at CODEZILLA. I ❤️ JavaScript.
+      Hi, I'm Jelle Kralt. Front End Engineer at <a href="http://www.codezilla.nl" target="_blank" rel="noopener">CODEZILLA</a>, 
+      currently working for <a href="https://www.klm.nl">KLM</a>. I ❤️ JavaScript.
     </p>
     <p class="about__social">
       <span>Find me on </span>

@@ -1,7 +1,7 @@
 <template>
   <div>
   <about/>
-  <blog-posts v-bind:posts="posts"/>
+  <blog-posts v-bind:posts="posts" read-more="true" />
   </div>
 </template>
 
@@ -20,7 +20,7 @@ export default {
     return { posts: [] };
   },
   async asyncData ({ app }) {
-    let { data } = await axios.get('/api/blog/');
+    let { data } = await axios.get('/api/blog/?limit=5');
 
     return {
       posts: data.map(post => {

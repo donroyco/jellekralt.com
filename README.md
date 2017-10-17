@@ -25,7 +25,7 @@ For detailed explanation on how things work, checkout the [Nuxt.js docs](https:/
 * [ ] Add more favicons for all platforms
 * [ ] Add social media meta tags
 * [ ] Cache with serviceworkers
-* [ ] Add sitemap.xml
+* [X] Add sitemap.xml
 * [ ] Refactor Entire SCSS structure to BEM
 
 ## Design

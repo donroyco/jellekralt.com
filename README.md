@@ -22,7 +22,7 @@ For detailed explanation on how things work, checkout the [Nuxt.js docs](https:/
 * [X] Fix Highlight.js on first load
 * [ ] Refactor markdown api to npm module
 * [X] Move blogpost to seperate component
-* [ ] Add more favicons for all platforms
+* [X] Add more favicons for all platforms
 * [ ] Add social media meta tags
 * [ ] Cache with serviceworkers
 * [X] Add sitemap.xml

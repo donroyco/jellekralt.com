@@ -22,7 +22,7 @@ app.use(helmet.contentSecurityPolicy({
   directives: {
     defaultSrc: ["'self'"],
     styleSrc: ["'self'", "'unsafe-inline'", disqusDomains],
-    scriptSrc: ["'self'", "'unsafe-inline'", disqusDomains],
+    scriptSrc: ["'self'", "'unsafe-inline'", disqusDomains, 'https://www.google-analytics.com'],
     imgSrc: ["'self'", 'data:', disqusDomains],
     frameSrc: ["'self'", disqusDomains]
   }

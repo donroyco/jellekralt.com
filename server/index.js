@@ -23,7 +23,7 @@ app.use(helmet.contentSecurityPolicy({
     defaultSrc: ["'self'"],
     styleSrc: ["'self'", "'unsafe-inline'", disqusDomains],
     scriptSrc: ["'self'", "'unsafe-inline'", disqusDomains, 'https://www.google-analytics.com'],
-    imgSrc: ["'self'", 'data:', disqusDomains],
+    imgSrc: ["'self'", 'data:', disqusDomains, 'https://www.google-analytics.com'],
     frameSrc: ["'self'", disqusDomains]
   }
 }));

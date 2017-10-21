@@ -14,7 +14,19 @@ const port = process.env.PORT || 3000;
 const mainDomain = 'jellekralt.com';
 const dokkuDomain = 'jellekralt-com.kra.lt';
 
+const disqusDomains = 'https://disqus.com https://*.disqus.com https://*.disquscdn.com';
+
 app.use(helmet());
+
+app.use(helmet.contentSecurityPolicy({
+  directives: {
+    defaultSrc: ["'self'"],
+    styleSrc: ["'self'", "'unsafe-inline'", disqusDomains],
+    scriptSrc: ["'self'", "'unsafe-inline'", disqusDomains],
+    imgSrc: ["'self'", 'data:', disqusDomains],
+    frameSrc: ["'self'", disqusDomains]
+  }
+}));
 
 app.set('port', port);
 

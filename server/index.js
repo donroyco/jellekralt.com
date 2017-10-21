@@ -17,7 +17,7 @@ const dokkuDomain = 'jellekralt-com.kra.lt';
 const disqusDomains = 'https://disqus.com https://*.disqus.com https://*.disquscdn.com';
 
 app.use(helmet());
-
+app.use(helmet.referrerPolicy({ policy: 'no-referrer-when-downgrade' }));
 app.use(helmet.contentSecurityPolicy({
   directives: {
     defaultSrc: ["'self'"],

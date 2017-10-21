@@ -2,7 +2,7 @@
   <header id="header">
     <a href="/">
   
-      <div id="logo"></div>
+      <div id="logo"><img src="~/assets/img/jk.svg" alt="Jelle Kralt" /></div>
     
       <div id="title">
         <h1>Jelle Kralt</h1>

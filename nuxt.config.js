@@ -3,8 +3,8 @@ const sassResourcesLoader = {
   loader: 'sass-resources-loader',
   options: {
     resources: [
-      resolve(__dirname, 'assets/css/_variables.scss'),
-      resolve(__dirname, 'assets/css/_mixins.scss')
+      resolve(__dirname, 'assets/scss/_variables.scss'),
+      resolve(__dirname, 'assets/scss/_mixins.scss')
     ]
   }
 };
@@ -45,7 +45,7 @@ module.exports = {
   /*
   ** Global CSS
   */
-  css: ['~/assets/css/main.scss'],
+  css: ['~/assets/scss/main.scss'],
   /*
   ** Modules
   */

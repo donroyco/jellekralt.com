@@ -14,3 +14,17 @@
     </p>
   </section>
 </template>
+
+<style lang="scss" scoped>
+.about {
+  p {
+    text-align: left;
+    hyphens: none;
+  }
+
+  &__social-icon {
+    font-size: $font-size * 1.5;
+    padding-left: 3px;
+  }
+}
+</style>

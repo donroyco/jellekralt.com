@@ -1,6 +1,6 @@
 <template>
   <header class="header" role="header">
-    <a href="/">
+    <a href="/" class="header__link">
       <div id="logo"><img src="~/assets/img/jk.svg" alt="Logo" /></div>
       <h1 class="header__title">Jelle Kralt</h1>
     </a>
@@ -31,7 +31,12 @@
   width: 100%;
   margin: 0 auto 50px auto;
 
+  &__link {
+    text-decoration: none;
+  }
+
   &__title {
+    text-decoration: none;
     letter-spacing: 0.01em;
     font-size: 24px;
     line-height: 32px;
@@ -100,6 +105,7 @@
   }
 
   &__link {
+    @include link();
     margin-right: 15px;
     color: $color-accent;
     background: none;

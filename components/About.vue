@@ -1,5 +1,5 @@
 <template>
-  <section class="about">
+  <section class="about content">
     <p>
       Hi, I'm Jelle Kralt. Front End Engineer at <a href="http://www.codezilla.nl" target="_blank" rel="noopener">CODEZILLA</a>, 
       currently working for <a href="https://www.klm.nl">KLM</a>. I ❤️ JavaScript.

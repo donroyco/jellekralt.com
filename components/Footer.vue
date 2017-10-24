@@ -73,6 +73,7 @@ export default {
 
     &__link {
       margin-right: 15px;
+      @include link();
     }
   }
 </style>

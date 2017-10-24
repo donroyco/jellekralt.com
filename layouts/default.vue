@@ -1,5 +1,5 @@
 <template>
-  <div class="content index width mx-auto px2 my4">
+  <div class="container">
     <page-header :navigation="navigation" />
     <nuxt/>
     <page-footer :navigation="navigation" />

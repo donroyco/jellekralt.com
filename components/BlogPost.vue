@@ -20,8 +20,8 @@
         </div>
       </div>
     </header>
-    <div class="article__content" v-html="post.content"></div>
-    <disqus/>
+    <div class="article__content content" v-html="post.content"></div>
+    <disqus class="content" />
   </article>
 </template>
 
@@ -37,20 +37,19 @@
   };
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 .article {
-  &-header {
+  &-header {    
     &__title {
+      color: $color-accent;
       margin-top: 0;
       margin-bottom: 0;
       text-transform: none;
       font-size: 1.5em;
       line-height: 1.25;
       letter-spacing: .01em;
-
-      // TODO: Get rid of this once .content has been cleaned up
-      margin-top: 0 !important;
-      margin-bottom: 0 !important;
+      margin-top: 0;
+      margin-bottom: 0;
     }
     &__meta {
       margin-top: 0;
@@ -73,6 +72,7 @@
     }
     &__tag {
       .tag-link {
+        @include link();
         &:before {
           content: "#";
         }

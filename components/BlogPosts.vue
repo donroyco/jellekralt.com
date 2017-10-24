@@ -6,7 +6,7 @@
         <div class="post-list__item-meta">
           <time datetime="2017-01-01T00:01:00" itemprop="datePublished" v-html="$options.filters.dateSuperscript(post.dateFormatted)"></time>
         </div>
-        <span><nuxt-link :to="{ path: post.link }">{{ post.meta.concept ? '[CONCEPT] ' : '' }}{{ post.title }}</nuxt-link></span>
+        <span><nuxt-link class="post-list__item-link" :to="{ path: post.link }">{{ post.meta.concept ? '[CONCEPT] ' : '' }}{{ post.title }}</nuxt-link></span>
       </li>
     </ul>
     <span v-if="readMore" class="post-list__read-more">
@@ -64,6 +64,10 @@
       color: #666;
       min-width: 100px;
       margin-right: 16px;
+    }
+
+    &-link {
+      @include link();
     }
   }
 

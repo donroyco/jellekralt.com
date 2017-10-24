@@ -10,11 +10,11 @@ const sassResourcesLoader = {
 };
 
 function isVueRule (rule) {
-  return rule.test.toString() === '/\\.vue$/'
+  return rule.test.toString() === '/\\.vue$/';
 }
 
 function isSASSRule (rule) {
-  return ['/\\.sass$/', '/\\.scss$/'].indexOf(rule.test.toString()) !== -1
+  return ['/\\.sass$/', '/\\.scss$/'].indexOf(rule.test.toString()) !== -1;
 }
 
 module.exports = {

@@ -1,0 +1,53 @@
+
+.content {
+  flex: 1;
+  @include base-style();
+
+  p {
+    @include hyphens(auto);
+  }
+
+  pre,
+  code {
+    @include hyphens(manual);
+  }
+
+  a {
+    @include link();
+  }
+
+  a.icon {
+    background: none;
+    &:hover {
+      color: $color-link;
+    }
+  }
+
+  h1 a,
+  .h1 a,
+  h2 a,
+  h3 a,
+  h4 a,
+  h5 a,
+  h6 a {
+    color: inherit;
+    text-decoration: none;
+    background: none;
+  }
+
+  h1 a:hover,
+  .h1 a:hover,
+  h2 a:hover,
+  h3 a:hover,
+  h4 a:hover,
+  h5 a:hover,
+  h6 a:hover {
+    @include underline(6px, $color-link);
+  }
+}
+
+@media (min-width: 480px) {
+  p {
+    text-align: justify;
+  }
+}

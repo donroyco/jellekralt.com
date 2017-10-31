@@ -2,7 +2,6 @@
 title: npm link with built code
 author: Jelle Kralt
 tags: npm,webpack,nodejs
-concept: true
 ---
 
 Ever used `npm link` to work on local versions of a npm dependency, without having to publish it? If so, have you ever run into a problem with using `npm link` on a package that has 'built' code, for instance with webpack or rollup? I certainly have. Let say you have the following setup:

@@ -30,6 +30,10 @@ module.exports = {
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1, maximum-scale=5' },
       { hid: 'description', name: 'description', content: 'Hi, I\'m Jelle Kralt. Front End Engineer at CODEZILLA. I ❤️ JavaScript' },
+      { name: 'twitter:card', content: 'summary' },
+      { name: 'twitter:site', content: '@jellekralt' },
+      { name: 'twitter:title', content: 'Jelle Kralt' },
+      { name: 'twitter:description', content: 'Hi, I\'m Jelle Kralt. Front End Engineer at CODEZILLA. I ❤️ JavaScript' },
       { 'http-equiv': 'X-UA-Compatible', content: 'IE=edge' },
       { name: 'theme-color', content: '#ffffff' }
     ],

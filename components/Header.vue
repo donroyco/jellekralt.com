@@ -5,12 +5,11 @@
       <h1 class="header__title">Jelle Kralt</h1>
     </a>
     <nav class="navigation" role="navigation">
-      <ul class="navigation__list" :class="{ 'navigation__list--open': menuIsOpen }">      
+      <ul class="navigation__list">      
         <li class="navigation__item" v-for="link in navigation" v-bind:key="link.href">
           <a class="navigation__link" :href="link.href">{{ link.title }}</a>
         </li>
       </ul>
-      <button class="navigation__switch" title="Menu" @click="menuIsOpen = !menuIsOpen"><i class="fa fa-bars fa-2x"></i></button>
     </nav>
   </header>
 
@@ -18,10 +17,7 @@
 
 <script>
   export default {
-    props: ['navigation'],
-    data: () => ({
-      menuIsOpen: false
-    })
+    props: ['navigation']
   };
 </script>
 
@@ -30,6 +26,10 @@
   max-width: 710px;
   width: 100%;
   margin: 0 auto 50px auto;
+
+  @media screen and (max-width: $breakpoint-small) {
+    margin: 0 auto 30px auto;
+  }
 
   &__link {
     text-decoration: none;
@@ -66,6 +66,10 @@
   font-weight: 200;
   color: $color-accent;
 
+  @media screen and (max-width: $breakpoint-small) {
+    clear: both;
+  }
+
   &__list {
     list-style-type: none;
     margin: 0;
@@ -73,13 +77,10 @@
     line-height: 15px;
 
     @media screen and (max-width: $breakpoint-small) {
-      &--open {
-        li {
-          display: block;
-          padding-top: 18px;
-          padding-left: $logo-width + 20px;
-          font-size: 15px;
-        }
+      padding-top: 30px;
+      
+      li {
+        font-size: 15px;
       }
     }
   }
@@ -99,7 +100,6 @@
     }
 
     @media screen and (max-width: $breakpoint-small) {
-      display: none;
       border-right: 0;
     }
   }
@@ -112,6 +112,13 @@
 
     &:hover {
       @include underline(5px, $color-accent);
+    }
+
+    @media screen and (max-width: $breakpoint-small) {
+      padding: 2px 5px;
+      margin: 0;
+      background-color: white;
+      color: black;
     }
   }
 

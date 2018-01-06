@@ -1,5 +1,7 @@
 # jellekralt-com
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/jellekralt/jellekralt.com.svg)](https://greenkeeper.io/)
+
 > JelleKralt.com
 
 ## Build Setup

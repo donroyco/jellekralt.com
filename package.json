@@ -18,7 +18,7 @@
     "@nuxtjs/axios": "^4.3.0",
     "@nuxtjs/font-awesome": "^1.0.2",
     "@nuxtjs/sitemap": "0.0.3",
-    "axios": "^0.16.2",
+    "axios": "^0.17.1",
     "cross-env": "^5.0.1",
     "date-fns": "^1.28.5",
     "express": "^4.15.3",
@@ -30,15 +30,15 @@
     "nuxt": "^1.0.0-rc3",
     "rxjs": "^5.4.3",
     "slugify": "^1.2.1",
-    "source-map-support": "^0.4.15"
+    "source-map-support": "^0.5.0"
   },
   "devDependencies": {
-    "babel-eslint": "^7.2.3",
-    "backpack-core": "^0.4.1",
+    "babel-eslint": "^8.1.2",
+    "backpack-core": "^0.5.0",
     "eslint": "^4.3.0",
     "eslint-config-standard": "^10.2.1",
     "eslint-loader": "^1.9.0",
-    "eslint-plugin-html": "^3.1.1",
+    "eslint-plugin-html": "^4.0.1",
     "eslint-plugin-import": "^2.7.0",
     "eslint-plugin-node": "^5.1.1",
     "eslint-plugin-promise": "^3.5.0",

@@ -1,16 +1,16 @@
 <template>
   <section class="about content">
     <p>
-      Hi, I'm Jelle Kralt. Front End Engineer at <a href="http://www.codezilla.nl" target="_blank" rel="noopener">CODEZILLA</a>, 
+      Hi there, and welcome to my blog! I'm Jelle Kralt, a Front End Engineer at <a href="http://www.codezilla.nl" target="_blank" rel="noopener">CODEZILLA</a>, 
       currently working for <a href="https://www.klm.nl">KLM</a>. I ❤️ JavaScript.
     </p>
     <p class="about__social">
       <span>Find me on </span>
-      <span><a class="about__social-icon icon" target="_blank" rel="noopener" href="https://github.com/jellekralt" title="Github"><i class="fa fa-github"></i></a></span>,
-      <span><a class="about__social-icon icon" target="_blank" rel="noopener" href="https://twitter.com/jellekralt" title="Twitter"><i class="fa fa-twitter"></i></a></span>,
-      <span><a class="about__social-icon icon" target="_blank" rel="noopener" href="http://nl.linkedin.com/in/jellekralt" title="LinkedIn"><i class="fa fa-linkedin"></i></a></span>,
+      <span><a class="about__social-icon icon" target="_blank" rel="noopener" href="https://github.com/jellekralt" title="Github"><i class="fa fa-github"><span>Github</span></i></a></span>,
+      <span><a class="about__social-icon icon" target="_blank" rel="noopener" href="https://twitter.com/jellekralt" title="Twitter"><i class="fa fa-twitter"><span>Twitter</span></i></a></span>,
+      <span><a class="about__social-icon icon" target="_blank" rel="noopener" href="http://nl.linkedin.com/in/jellekralt" title="LinkedIn"><i class="fa fa-linkedin"><span>LinkedIn</span></i></a></span>,
       and 
-      <span><a class="about__social-icon icon" target="_blank" rel="noopener" href="https://keybase.io/jellekralt/" title="Keybase"><i class="fa fa-key"></i></a></span>
+      <span><a class="about__social-icon icon" target="_blank" rel="noopener" href="https://keybase.io/jellekralt/" title="Keybase"><i class="fa fa-key"><span>Keybase</span></i></a></span>
     </p>
   </section>
 </template>
@@ -25,6 +25,11 @@
   &__social-icon {
     font-size: $font-size * 1.5;
     padding-left: 3px;
+
+    i span {
+      visibility: hidden;
+      font-size: 0;
+    }
   }
 }
 </style>

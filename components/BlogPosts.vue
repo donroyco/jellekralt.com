@@ -1,12 +1,12 @@
 <template>
   <div>
-  <section>
-     <h2 class="post-latest__title">Latest Post: {{ posts[0].title }}</h2>
-     <p v-html="posts[0].content.match(/<(p)>(.*?)<\/\1>/)[0]"></p>
+  <section class="post-latest">
+    <h1 class="post-latest__title">Latest Post: {{ posts[0].title }}</h1>
+    <p v-html="posts[0].content.match(/<(p)>(.*?)<\/\1>/)[2]"></p>
     <span><nuxt-link class="post-latest__item-link" :to="{ path: posts[0].link }">Read more...</nuxt-link></span>
   </section>
   <section class="post-list">
-    <h2 class="post-list__title"><a href="/blog" class="post-list__title-link">More Blogposts</a></h2>
+    <h1 class="post-list__title"><a href="/blog" class="post-list__title-link">More Blogposts</a></h1>
     <ul class="post-list__items">
       <li class="post-list__item" v-for="post in posts" v-bind:key="post.slug">
         <div class="post-list__item-meta">
@@ -36,7 +36,7 @@
 
 <style lang="scss" scoped>
 .post-latest {
-    &__title {
+  &__title {
     // TODO: Remove important after .content fix 
     letter-spacing: 0.01em !important;
     font-size: 1.5em !important;

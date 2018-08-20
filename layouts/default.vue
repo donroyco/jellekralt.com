@@ -23,6 +23,7 @@ export default {
       navigation: [
         { title: 'Home', href: '/' },
         { title: 'Blog', href: '/blog' },
+        { title: 'Linkdump', href: '/links' },
         { title: 'Projects', href: 'https://github.com/jellekralt' }
       ]
     };

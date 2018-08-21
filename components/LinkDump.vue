@@ -7,7 +7,7 @@
         <div class="link-list__item-meta">
           <time datetime="2017-01-01T00:01:00" itemprop="datePublished" v-html="$options.filters.dateSuperscript(link.dateFormatted)"></time>
         </div>
-        <span><a class="link-list__item-link" :href="link.href" target="_blank">{{ link.description }}</a></span>
+        <span><a class="link-list__item-link" :href="link.href" target="_blank" rel="noopener">{{ link.description }}</a></span>
       </li>
     </ul>
   </section>

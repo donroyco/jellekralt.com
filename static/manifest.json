@@ -1,6 +1,7 @@
 {
     "name": "Jelle Kralt",
     "short_name": "Jelle Kralt",
+    "display": "fullscreen",
     "icons": [
         {
             "src": "/android-chrome-192x192.png",

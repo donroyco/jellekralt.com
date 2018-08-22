@@ -1,5 +1,5 @@
 <template>
-  <header class="header" role="header">
+  <header class="header" role="banner">
     <a href="/" class="header__link">
       <div id="logo"><img src="~/assets/img/jk.svg" alt="Logo" /></div>
       <h1 class="header__title">Jelle Kralt</h1>

@@ -33,7 +33,7 @@ module.exports = {
       { name: 'twitter:card', content: 'summary' },
       { name: 'twitter:site', content: '@jellekralt' },
       { name: 'twitter:title', content: 'Jelle Kralt' },
-      { name: 'twitter:description', content: 'Hi, I\'m Jelle Kralt. Front End Engineer at CODEZILLA. I ❤️ JavaScript' },
+      { name: 'twitter:description', content: `Jelle Kralt's personal blog. Hi, I'm Jelle Kralt, a Front End Engineer at CODEZILLA, currently working for KLM. I ❤️ everything to do with JavaScript, both in the browser and on Node.js.` },
       { 'http-equiv': 'X-UA-Compatible', content: 'IE=edge' },
       { name: 'theme-color', content: '#ffffff' }
     ],

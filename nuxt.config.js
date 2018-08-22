@@ -55,7 +55,8 @@ module.exports = {
   */
   modules: [
     '@nuxtjs/font-awesome',
-    '@nuxtjs/sitemap'
+    '@nuxtjs/sitemap',
+    '@nuxtjs/pwa'
   ],
   /*
   ** Plugins
